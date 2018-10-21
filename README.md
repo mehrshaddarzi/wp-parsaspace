@@ -12,22 +12,22 @@
   <li>6. هماهنگی کامل با لینک های موجود در پایگاه داده وردپرس و عدم شکسته شدن لینک فایل ها بعد از جابه جایی</li>
 </ul></div>
 <br />
-<div dir="rtl">راهنمای کار با افزونه :</div>
+<div dir="rtl"><b>راهنمای کار با افزونه :</b></div>
 <hr>
 <div dir="rtl">راهنمای جامع کار و نصب افزونه پارسا اسپیس را از<a href="https://realwp.net/wp-parsaspace/" target="_blank"> اینجا </a> مطالعه کنید</div>
 <br />
-<div dir="rtl">پیش نیاز نصب افزونه پارسا اسپیس :</div>
+<div dir="rtl"><b>پیش نیاز نصب افزونه پارسا اسپیس :</b></div>
 <hr>
 <div dir="rtl">
 <ul>
   <li>1. نصب PHP نسخه ی 5.4 بالاتر</li>
   <li>2. فعال بودن تابع Curl در php</li>
   <li>3. یک اکانت در سایت <a href="http://parsaspace.com/" target="_blank">پارسااسپیس</a> ایجاد کنید تا یک کد API دریافت کنید</li>
-  <li>4. در افزونه در Localhost کامپیوتر قابلیت فعال سازی ندارد</li>
+  <li>4. این افزونه در Localhost کامپیوتر قابلیت فعال سازی ندارد</li>
 </ul>
 </div>
 <br />
-<div dir="rtl">تصاویر محیط افزونه</div>
+<div dir="rtl"><b>تصاویر محیط افزونه</b></div>
 <hr>
 
 <p align="center">
