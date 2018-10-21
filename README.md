@@ -15,7 +15,7 @@
 <div dir="rtl"><b>راهنمای کار با افزونه :</b></div>
 <hr>
 <div dir="rtl">راهنمای جامع کار و نصب افزونه پارسا اسپیس را از<a href="https://realwp.net/wp-parsaspace/" target="_blank"> اینجا </a> مطالعه کنید</div>
-<br />
+<br /><br />
 <div dir="rtl"><b>پیش نیاز نصب افزونه پارسا اسپیس :</b></div>
 <hr>
 <div dir="rtl">
