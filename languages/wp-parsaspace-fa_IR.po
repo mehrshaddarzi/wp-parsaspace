@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ParsaSpace CDN Host\n"
+"POT-Creation-Date: 2018-08-11 11:47+0430\n"
+"PO-Revision-Date: 2018-08-11 11:47+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-parsaspace.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-wp-parsaspace-admin.php:114
+#: admin/class-wp-parsaspace-admin.php:736
+msgid "ParsaSpace"
+msgstr "پارسا اسپیس"
+
+#: admin/class-wp-parsaspace-admin.php:518
+msgid "Your website is not connected to the parsaspace Host"
+msgstr "کاربر عزیز وب سایت شما به سرویس پارسا اسپیس متصل نیست"
+
+#: admin/class-wp-parsaspace-admin.php:518
+msgid "Setting Page"
+msgstr "صفحه تنظیمات"
+
+#: admin/class-wp-parsaspace-admin.php:573
+#, php-format
+msgid "تعداد %d فایل به پارسا اسپیس منتقل شد"
+msgstr ""
+
+#: admin/class-wp-parsaspace-admin.php:665
+msgid "Not Allowed !"
+msgstr "عدم دسترسی مجاز !"
+
+#: admin/class-wp-parsaspace-admin.php:680
+#: admin/class-wp-parsaspace-admin.php:741
+msgid "Transfer To Parsaspace"
+msgstr "انتقال به پارسا اسپیس"
+
+#: admin/class-wp-parsaspace-admin.php:715
+msgid "File Place"
+msgstr "مکان فایل"
+
+#: includes/class-wp-parsaspace-srdb.php:79
+#, php-format
+msgid "(%s MB)"
+msgstr "(%s مگابایت)"
+
+#. Plugin Name of the plugin/theme
+msgid "ParsaSpace CDN Host"
+msgstr "هاست پارسا اسپیس"
+
+#. Plugin URI of the plugin/theme
+msgid "https://realwp.net/parsaspace"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Connect your WordPress Media Library to the ParsSpace CDN Host and Enjoy"
+msgstr ""
+"کتابخانه فایل های وردپرس خود را به سرویس هاست پارسا اسپیس با پهنای باند "
+"نامحدود متصل کنید و لذت ببرید"
+
+#. Author of the plugin/theme
+msgid "Mehrshad Darzi"
+msgstr "مهرشاد درزی"
+
+#. Author URI of the plugin/theme
+msgid "https://realwp.net/"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Hello World!"
+#~ msgid "Hello World"
+#~ msgstr "سلام وردپرس"
+
+#~ msgid ""
+#~ "This is a short description of what the plugin does. It's displayed in "
+#~ "the WordPress admin area."
+#~ msgstr ""
+#~ "کتابخانه فایل های وردپرس خود را به هاست با پهنای باند نامحدود پارسا اسپیس "
+#~ "متصل کنید و لذت ببرید"

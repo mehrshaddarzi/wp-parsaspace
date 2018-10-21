@@ -1,0 +1,335 @@
+/* Load font */
+@font-face {
+    font-family: "yekan";
+    src: url(../fonts/Yekan.eot);
+    src: url(../fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(../fonts/Yekan.woff) format("woff"), url(../fonts/Yekan.ttf) format("truetype"), url(../fonts/Yekan.svg#BYekan) format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+
+/*config*/
+.rtl { direction:rtl; }
+.ltr { direction:ltr; }
+.text-right { text-align:right; }
+.text-left { text-align:left; }
+.text-center { text-align:center; }
+.text-success {color: #54a85a;}
+.text-danger {color: #ff1a67;}
+.text-warning {color: #ff9a36;}
+.text-primary {color:#1a76b5;}
+.red { color:#ca1305; }
+.no-dec { text-decoration: none; }
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+
+/*Alert top*/
+.alert_top {
+    z-index: 99999999999999;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 15px;
+    text-align: right;
+    color: #fff;
+    font: 20px 'yekan';
+    border: 0px;
+    text-align: center;
+    box-shadow: 1px 1px 19px 1px rgba(97, 90, 90, 0.72);
+    display: none;
+}
+.alert_info {
+    background: #485daf;
+}
+.alert_success {
+    background: #4CAF50;
+}
+.alert_error {
+    background: #af3239;
+}
+
+/* Install Step*/
+.install_step_parsaspace {
+    font: 18px 'yekan';
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(241, 241, 241);
+    text-align: center;
+    padding: 0px !important;
+    z-index: 9999999999;
+    overflow-y: scroll;
+}
+.install_step_parsaspace a {
+    text-decoration: none;
+}
+.table_install_step {
+    width: 700px;
+    margin:10px auto;
+}
+.logo_parsaspace {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.table_install_step span.description {
+    display: block;
+    margin-top: 9px;
+    font-style: normal;
+    line-height: 22px;
+}
+select.h35 {
+    height: 35px;
+}
+.install_step_parsaspace .submit_btn {
+    margin-top: 70px;
+}
+.install_step_parsaspace .submit_btn input {
+    margin-left: 30px;
+}
+.install_step_parsaspace .submit_btn a {
+    color: #7f7979;
+    font-size: 14px;
+    vertical-align: 9px;
+}
+.install_step_parsaspace .copyright {
+    color: #ba6000;
+}
+.install_step_parsaspace .copyright a { color: #ba6000; vertical-align: 0px; }
+
+/* Admin Page */
+#admin_page_wp_parsaspace {
+     font: 18px 'yekan';
+ }
+
+#admin_page_wp_parsaspace .wp-person a:focus .gravatar, #admin_page_wp_parsaspace a:focus, #admin_page_wp_parsaspace a:focus .media-icon img {
+     -webkit-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#admin_page_wp_parsaspace #poststuff h2 {
+    font: 15px 'yekan' !important;
+}
+#admin_page_wp_parsaspace #poststuff h2 i {
+    color: #948585;
+    margin-left: 5px;
+}
+#admin_page_wp_parsaspace .postbox .handlediv {
+    padding-top: 8px;
+}
+#admin_page_wp_parsaspace .postbox .inside, #admin_page_wp_parsaspace .stuffbox .inside {
+    padding: 12px 12px 20px 12px;
+    line-height: 1.8em;
+    font-size: 14.5px;
+}
+#admin_page_wp_parsaspace .postbox .inside p {
+    line-height: 1.8em;
+    font-size: 14.5px;
+}
+#admin_page_wp_parsaspace .center-logo {
+    text-align: center;
+    margin: 40px auto 30px auto;
+}
+#admin_page_wp_parsaspace .center-logo a {
+    transition: 1s all;
+}
+#admin_page_wp_parsaspace .center-logo a:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+#admin_page_wp_parsaspace .list_static {
+    margin: 0px 10px 0px 10px;
+}
+#admin_page_wp_parsaspace .list_static li:not(:last-child) {
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+
+}
+#admin_page_wp_parsaspace .list_static li, #admin_page_wp_parsaspace .list_developer li {
+    cursor: default;
+    transition: 1s all;
+}
+#admin_page_wp_parsaspace .list_static li:hover, #admin_page_wp_parsaspace .list_developer li:hover {
+    color: #485daf;
+}
+#admin_page_wp_parsaspace .list_static li:hover:not(:last-child) {
+    border-bottom: 1px solid #ff1a67;
+}
+#admin_page_wp_parsaspace .list_static li i {
+    vertical-align: -2px;
+    margin-left: 5px;
+    width: 15px;
+    color: #967f7f;
+}
+#admin_page_wp_parsaspace .list_static .percent {
+    padding-right: 5px;
+    font-size: 12px;
+}
+#admin_page_wp_parsaspace .m-t-10 {
+    margin-top: 10px;
+}
+#admin_page_wp_parsaspace .m-t-30 {
+    margin-top: 28px;
+}
+#admin_page_wp_parsaspace .m-sub-t-10 {
+    margin-top: -10px;
+}
+#admin_page_wp_parsaspace .realwp_logo {
+    margin-bottom: 10px;
+}
+#admin_page_wp_parsaspace .mouse-pointer {
+    cursor: pointer;
+}
+#admin_page_wp_parsaspace .notice  {
+    font: 14px 'yekan';
+}
+#admin_page_wp_parsaspace .d-none  {
+    display: none;
+}
+#admin_page_wp_parsaspace .i-pen {
+       margin-right: 10px;cursor: pointer;color: #868686;    font-size: 16.5px;
+}
+#admin_page_wp_parsaspace .description {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    line-height: 22px;
+}
+#admin_page_wp_parsaspace .clearfix {
+    clear: both;
+}
+.close_dismiss {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    border: none;
+    margin: 0;
+    padding: 9px;
+    background: 0 0;
+    color: #72777c;
+    cursor: pointer;
+    font-size: 18px;
+}
+.show_wp_parsaspace_file_manager {
+    display: block;
+    background: #54A85A;
+    color: #fff;
+    width: 150px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: 1s all;
+}
+.show_wp_parsaspace_file_manager:hover {
+    background: #485daf;
+    color: #fff !important;
+}
+
+/* File Manager*/
+#file_manager_parsaspace {
+    background: #f9f9f9 !important;
+    display: none;
+    font: 14px 'yekan';
+}
+#file_manager_parsaspace .close_box {
+    width: 80px;
+    float: left;
+    font-size: 35px;
+    color: #c1c1c1;
+    cursor: pointer;
+    margin: 20px 0 20px 35px;
+}
+#file_manager_parsaspace .close_box:hover {
+     color: #ff9a36;
+ }
+.parsaspace_content_file_manager {
+    width: 80%;
+    margin: 20px auto;
+}
+.parsaspace_content_file_manager .title {
+    font-size: 24px;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.parsaspace_content_file_manager .title .f-right {
+    float: right;
+}
+.parsaspace_content_file_manager .title .f-left {
+    float: left;
+    direction: ltr;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.parsaspace_content_file_manager .title .f-left .go-sep {
+    color: #c5c5c5;
+    padding-right: 5px;
+}
+.parsaspace_content_file_manager .title .f-left .go-folder {
+    color: #485daf;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.parsaspace_content_file_manager .title i {
+    font-size: 40px;
+    vertical-align: -9px;
+    padding-left: 7px;
+}
+
+#tbl_parsaspace_manager {
+    border-collapse: collapse;
+    width: 100%;
+}
+#tbl_parsaspace_manager td, #tbl_parsaspace_manager th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#tbl_parsaspace_manager tr:nth-child(even){background-color: #f2f2f2;}
+#tbl_parsaspace_manager tr:hover {background-color: #ddd;}
+#tbl_parsaspace_manager th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+#tbl_parsaspace_manager .dl-link-table {
+    font-size: 18px;
+    color: #1a76b5;
+}
+#tbl_parsaspace_manager .dl-link-table:hover {
+    color: #af3239;
+}
+
+#tbl_parsaspace_manager .cp {
+    font-size: 17px;
+    color: #a79d9d;
+    cursor: pointer;
+}
+#tbl_parsaspace_manager .ico-fo {
+    font-size: 18px;
+    padding-left: 4px;
+    vertical-align: -1px;
+}
+#tbl_parsaspace_manager .trebuchet-font {
+    font-family: Trebuchet Ms;
+}
+#tbl_parsaspace_manager span[data-show-parsaspace-path] {
+    color: #e67b10;
+    cursor: pointer;
+}
