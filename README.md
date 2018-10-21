@@ -11,10 +11,25 @@
   <li>5. امکان دانلود فایل از وب سایت های دیکر یا ریموت دانلود</li>
   <li>6. هماهنگی کامل با لینک های موجود در پایگاه داده وردپرس و عدم شکسته شدن لینک فایل ها بعد از جابه جایی</li>
 </ul></div>
-<br />
 <div dir="rtl">راهنمای کار با افزونه :</div>
 <hr>
-<div dir="rtl">راهنمای جامع کار و نصب افزونه پارسا اسپیس را از<a href="https://realwp.net/wp-parsaspace/" target="_blank">اینجا</a> مطالعه کنید</div>
+<div dir="rtl">راهنمای جامع کار و نصب افزونه پارسا اسپیس را از<a href="https://realwp.net/wp-parsaspace/" target="_blank"> اینجا </a> مطالعه کنید</div>
+<div dir="rtl">پیش نیاز نصب افزونه پارسا اسپیس :</div>
+<hr>
+<div dir="rtl">
+<ul>
+  <li>1. نصب PHP نسخه ی 5.4 بالاتر</li>
+  <li>2. فعال بودن تابع Curl در php</li>
+  <li>3. یک اکانت در سایت <a href="http://parsaspace.com/" target="_blank"></a> ایجاد کنید تا یک کد API دریافت کنید</li>
+  <li>4. در افزونه در Localhost کامپیوتر قابلیت فعال سازی ندارد</li>
+</ul>
+</div>
+<div dir="rtl">مشکل داشتیم از کی بپرسیم ؟</div>
+<hr>
+<div dir="rtl">این افزونه توسط مهرشاد درزی از <a href="https://realwp.net" target="_blank">وردپرس واقعی</a> وردپرس واقعی برنامه نویسی شده است در صورتی که خطایی در کارکرد این افزونه مشاهده کرده اید میتوانید به وب سایت مراجعه کنید و ما رو مطلع سازید</div>
+
+<div dir="rtl">تصاویر محیط افزونه</div>
+<hr>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-1.jpg" title="wp-parsaspace">
