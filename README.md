@@ -22,14 +22,10 @@
 <ul>
   <li>1. نصب PHP نسخه ی 5.4 بالاتر</li>
   <li>2. فعال بودن تابع Curl در php</li>
-  <li>3. یک اکانت در سایت <a href="http://parsaspace.com/" target="_blank"></a> ایجاد کنید تا یک کد API دریافت کنید</li>
+  <li>3. یک اکانت در سایت <a href="http://parsaspace.com/" target="_blank">پارسااسپیس</a> ایجاد کنید تا یک کد API دریافت کنید</li>
   <li>4. در افزونه در Localhost کامپیوتر قابلیت فعال سازی ندارد</li>
 </ul>
 </div>
-<br />
-<div dir="rtl">مشکل داشتیم از کی بپرسیم ؟</div>
-<hr>
-<div dir="rtl">این افزونه توسط مهرشاد درزی از <a href="https://realwp.net" target="_blank">وردپرس واقعی</a> وردپرس واقعی برنامه نویسی شده است در صورتی که خطایی در کارکرد این افزونه مشاهده کرده اید میتوانید به وب سایت مراجعه کنید و ما رو مطلع سازید</div>
 <br />
 <div dir="rtl">تصاویر محیط افزونه</div>
 <hr>
@@ -37,5 +33,12 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-1.jpg" title="wp-parsaspace">
 </p>
-
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-2.jpg" title="wp-parsaspace">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-3.jpg" title="wp-parsaspace">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-4.jpg" title="wp-parsaspace">
+</p>
