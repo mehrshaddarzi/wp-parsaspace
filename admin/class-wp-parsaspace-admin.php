@@ -726,7 +726,7 @@ class Wp_Parsaspace_Admin {
      * @since    1.0.0
      */
     public function admin_init() {
-
+        global $pagenow;
 
         /*
          * Disable install Step
@@ -741,8 +741,7 @@ class Wp_Parsaspace_Admin {
          * If Api and domain is empty not allow Show setting page
          */
         $opt = get_option("wp_parsaspace_opt");
-        $screen = get_current_screen();
-        if($opt['install_step'] =="no" and $opt['api_token'] =="" and $opt['domain_name'] =="" and $screen->id =='toplevel_page_parsaspace_setting') {
+        if($opt['install_step'] =="no" and $opt['api_token'] =="" and $opt['domain_name'] =="" and $pagenow =="admin.php" and isset($_GET['page']) and $_GET['page'] =='parsaspace_setting') {
             $opt['install_step'] = "yes";
             update_option('wp_parsaspace_opt', $opt);
             wp_redirect( admin_url( 'index.php') );
