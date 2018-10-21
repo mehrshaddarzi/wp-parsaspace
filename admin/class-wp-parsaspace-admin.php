@@ -737,6 +737,17 @@ class Wp_Parsaspace_Admin {
             update_option('wp_parsaspace_opt', $opt);
         }
 
+        /*
+         * If Api and domain is empty not allow Show setting page
+         */
+        $opt = get_option("wp_parsaspace_opt");
+        $screen = get_current_screen();
+        if($opt['install_step'] =="no" and $opt['api_token'] =="" and $opt['domain_name'] =="" and $screen->id =='toplevel_page_parsaspace_setting') {
+            $opt['install_step'] = "yes";
+            update_option('wp_parsaspace_opt', $opt);
+            wp_redirect( admin_url( 'index.php') );
+            exit;
+        }
 
         /*
          * Screen Layout Admin Page
