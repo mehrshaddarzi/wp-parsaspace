@@ -11,6 +11,10 @@
   <li>5. امکان دانلود فایل از وب سایت های دیکر یا ریموت دانلود</li>
   <li>6. هماهنگی کامل با لینک های موجود در پایگاه داده وردپرس و عدم شکسته شدن لینک فایل ها بعد از جابه جایی</li>
 </ul></div>
+<br />
+<div dir="rtl">راهنمای کار با افزونه :</div>
+<hr>
+<div dir="rtl">راهنمای جامع کار و نصب افزونه پارسا اسپیس را از<a href="https://realwp.net/wp-parsaspace/" target="_blank">اینجا</a> مطالعه کنید</div>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-1.jpg" title="wp-parsaspace">
