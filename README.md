@@ -5,4 +5,5 @@
   <img src="https://raw.githubusercontent.com/mehrshaddarzi/wp-parsaspace/master/screenshot-1.jpg" title="wp-parsaspace">
 </p>
 
-# <div dir="rtl">امکانات افزونه پارسااسپیس :</div>
+<div dir="rtl">امکانات افزونه پارسااسپیس :</div>
+<hr>
