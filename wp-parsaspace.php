@@ -15,6 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       ParsaSpace CDN Host
  * Plugin URI:        https://realwp.net/parsaspace
+ * GitHub URI:        mehrshaddarzi/wp-parsaspace
  * Description:       Connect your WordPress Media Library to the ParsSpace CDN Host and Enjoy
  * Version:           1.0.4
  * Author:            Mehrshad Darzi
@@ -38,6 +39,12 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'WP_PARSASPACE_VERSION', '1.0.4' );
 define( 'WP_PARSASPACE_DIR_URL', plugin_dir_url(__FILE__) );
 define( 'WP_PARSASPACE_DIR_PATH', plugin_dir_path(  __FILE__  ) );
+
+/**
+ * Update Automatic Plugin From Github
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-parsaspace-updater.php';
+
 
 /**
  * The code that runs during plugin activation.
