@@ -211,12 +211,15 @@ class Wp_Parsaspace_Admin {
      */
     public function Create_SubDir($api) {
 
+    	//Load Helper
+	    $helper = new Wp_Parsaspace_Helper();
+
         //Get Base Dir Upload in Wordpress
         $upload_dir = wp_upload_dir();
         $subdir = str_replace("\\" ,"/" ,$upload_dir['subdir']);
 
         //Create Subfolder in Api
-        $r = explode("/", $subdir);
+        $r = explode("/", $helper->remove_duplicate_slash($subdir));
         $count = count($r);
         $get_before_path = "";
 
@@ -225,8 +228,8 @@ class Wp_Parsaspace_Admin {
         if ( $check_basefolder !== false ) { $get_before_path = $check_basefolder; }
 
         for($i=0; $i<$count; $i++){
-            $api->CreateFolder($get_before_path.'/'.$r[$i]);
-            $get_before_path .= $r[$i]."/";
+            $api->CreateFolder($helper->remove_duplicate_slash($get_before_path.'/'.$r[$i]));
+            $get_before_path .= $helper->remove_duplicate_slash($r[$i]."/");
         }
 
         return $get_before_path;
@@ -435,6 +438,9 @@ class Wp_Parsaspace_Admin {
     {
         if ( wp_attachment_is_image( $post_id ) ===false ) {
 
+        	//Load Helper
+	        $helper = new Wp_Parsaspace_Helper();
+
             //Get File Path
             $file = get_attached_file($post_id);
 
@@ -451,14 +457,14 @@ class Wp_Parsaspace_Admin {
 
                 //Check BaseFolder Api
                 $check_basefolder = $this->Check_is_Basefolder();
-                if ( $check_basefolder !== false ) { $path = $check_basefolder.'/'.$path; }
-                $subdir = str_replace("\\" ,"/" ,$path);
+                if ( $check_basefolder !== false ) { $path = $helper->remove_duplicate_slash($check_basefolder.'/'.$path); }
+                $subdir = $helper->remove_duplicate_slash(str_replace("\\" ,"/" ,$path));
                 $r = explode("/", $subdir);
                 $count = count($r);
                 $get_before_path = "";
                 for($i=0; $i<$count; $i++){
-                    $api->CreateFolder($get_before_path.'/'.$r[$i]);
-                    $get_before_path .= $r[$i]."/";
+                    $api->CreateFolder($helper->remove_duplicate_slash($get_before_path.'/'.$r[$i]));
+                    $get_before_path .= $helper->remove_duplicate_slash($r[$i]."/");
                 }
 
             } else {
@@ -545,7 +551,7 @@ class Wp_Parsaspace_Admin {
             $args =  get_post_meta($post_id, '_wp_attachment_metadata', true);
             $path = str_replace(basename($args['file']),"", $args['file']);
             $orginal_path = $path;
-            if ( $check_basefolder !== false ) { $path = $check_basefolder.'/'.$path; }
+            if ( $check_basefolder !== false ) { $path = $helper->remove_duplicate_slash($check_basefolder.'/'.$path); }
             $list[] = basename($args['file']);
 
             //Check if Extra Size Image
@@ -559,12 +565,12 @@ class Wp_Parsaspace_Admin {
 
             //Create folder in Parsaspace
             $subdir = str_replace("\\" ,"/" ,$path);
-            $r = explode("/", $subdir);
+            $r = explode("/", $helper->remove_duplicate_slash($subdir));
             $count = count($r);
             $get_before_path = "";
             for($i=0; $i<$count; $i++){
-                $api->CreateFolder($get_before_path.'/'.$r[$i]);
-                $get_before_path .= $r[$i]."/";
+                $api->CreateFolder($helper->remove_duplicate_slash($get_before_path.'/'.$r[$i]));
+                $get_before_path .= $helper->remove_duplicate_slash($r[$i]."/");
             }
 
             //Remove file From ParsaSpace
