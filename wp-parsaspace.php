@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://realwp.net/
- * @since             1.0.5
+ * @since             1.0.6
  * @package           Wp_Parsaspace
  *
  * @wordpress-plugin
@@ -17,7 +17,7 @@
  * Plugin URI:        https://realwp.net/wp-parsaspace
  * GitHub URI:        mehrshaddarzi/wp-parsaspace
  * Description:       Connect your WordPress Media Library to the ParsSpace CDN Host and Enjoy
- * Version:           1.0.5
+ * Version:           1.0.6
  * Author:            Mehrshad Darzi
  * Author URI:        https://realwp.net/
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WP_PARSASPACE_VERSION', '1.0.5' );
+define( 'WP_PARSASPACE_VERSION', '1.0.6' );
 define( 'WP_PARSASPACE_DIR_URL', plugin_dir_url(__FILE__) );
 define( 'WP_PARSASPACE_DIR_PATH', plugin_dir_path(  __FILE__  ) );
 
