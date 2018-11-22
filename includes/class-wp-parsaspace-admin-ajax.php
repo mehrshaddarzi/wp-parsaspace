@@ -546,15 +546,15 @@ class Wp_Parsaspace_Admin_Ajax {
             $opt = get_option('wp_parsaspace_opt');
             $path = "/".$opt['remote_dir']."/";
             $api->CreateFolder("/".$opt['remote_dir']);
-            $api->RemoteUpload($path, $file_url);
+            $api->RemoteUpload($helper->remove_duplicate_slash($path), $file_url);
 
             if ($file_name =="") {
                 sleep(8);
             } else {
                 sleep(9);
                 //Change File Name
-                $api->Rename($path.basename($file_url), $path.$file_name);
-                sleep(2);
+	            $api->Rename($helper->remove_duplicate_slash(rtrim($path,"/")."/".basename($file_url)), $helper->remove_duplicate_slash(rtrim($path,"/")."/".$file_name));
+	            sleep(2);
             }
 
             $result = array(
