@@ -33,12 +33,11 @@ class Wp_Parsaspace_i18n {
 	 */
 	public function load_plugin_textdomain() {
 
-        if ( get_locale() == 'fa_IR' ) {
-            load_textdomain( 'wp-parsaspace',  WP_PARSASPACE_DIR_PATH. '/languages/wp-parsaspace-fa_IR.mo' );
-        }
+		if ( get_locale() == 'fa_IR' ) {
+			load_textdomain( 'wp-parsaspace', WP_PARSASPACE_DIR_PATH . '/languages/wp-parsaspace-fa_IR.mo' );
+		}
 
 	}
-
 
 
 }

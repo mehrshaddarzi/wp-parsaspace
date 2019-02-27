@@ -37,8 +37,8 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'WP_PARSASPACE_VERSION', '1.0.6' );
-define( 'WP_PARSASPACE_DIR_URL', plugin_dir_url(__FILE__) );
-define( 'WP_PARSASPACE_DIR_PATH', plugin_dir_path(  __FILE__  ) );
+define( 'WP_PARSASPACE_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'WP_PARSASPACE_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Update Automatic Plugin From Github
@@ -88,4 +88,5 @@ function run_wp_parsaspace() {
 	$plugin->run();
 
 }
+
 run_wp_parsaspace();

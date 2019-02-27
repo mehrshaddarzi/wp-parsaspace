@@ -32,9 +32,6 @@ class Wp_Parsaspace_Deactivator {
 	public static function deactivate() {
 
 
-
-
-
-    }
+	}
 
 }
