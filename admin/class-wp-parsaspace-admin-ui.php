@@ -301,12 +301,15 @@ echo '
 <table class="form-table m-sub-t-10">
 <tbody>
 
-<tr>
+<tr style="display: none;">
 <th><label for="is_automatic_upload">آپلود اتوماتیک فایل ها</label></th>
 <td>
 <select name="is_automatic_upload" id="is_automatic_upload" class="h35">
+<!--
 <option value="yes" '.selected( $opt['is_automatic_upload'], "yes", false ).'>بله</option>
 <option value="no" '.selected( $opt['is_automatic_upload'], "no", false ).'>خیر</option>
+-->
+<option value="no">خیر</option>
 </select>
 <span class="description">در صورتی که میخواهید بعد از آپلود فایل جدید به صورت اتوماتیک به پارسا اسپیس منتقل شود گزینه بله, در غیر این صورت اگر میخواهید فایل ها به انتخاب شما در کتابخانه وردپرس آپلود شوند گزینه ی خیر را انتخاب کنید</span>
 </td>
@@ -522,17 +525,19 @@ echo '<div id="file_manager_parsaspace" class="install_step_parsaspace">
                     </td>
                 </tr>
 
-                <tr>
+                <tr style="display: none;">
                     <th><label for="is_automatic_upload">آپلود اتوماتیک فایل ها</label></th>
                     <td>
                         <select name="is_automatic_upload" id="is_automatic_upload" class="h35">
+                        <!--
                             <option value="yes">بله</option>
+                            <option value="no">خیر</option>
+                            -->
                             <option value="no">خیر</option>
                         </select>
                         <span class="description">در صورتی که میخواهید بعد از آپلود فایل جدید به صورت اتوماتیک به پارسا اسپیس منتقل شود گزینه بله, در غیر این صورت اگر میخواهید فایل ها به انتخاب شما در کتابخانه وردپرس آپلود شوند گزینه ی خیر را انتخاب کنید</span>
                     </td>
                 </tr>
-
 
                 <tr>
                     <th><label for="is_optimize">من افزونه بهینه ساز دارم</label></th>

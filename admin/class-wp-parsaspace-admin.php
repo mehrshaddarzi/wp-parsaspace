@@ -55,6 +55,28 @@ class Wp_Parsaspace_Admin {
 	}
 
 	/**
+	 * Custom Update Version
+	 */
+	public function update_version() {
+
+		//Get Version
+		$get_version = get_option( "wp_parsaspace_version" );
+		if ( $get_version === false ) {
+			update_option( $get_version, WP_PARSASPACE_VERSION, '', 'yes' );
+			$get_version = "2.0";
+		}
+
+		// Disable Automatic Upload at > 1.0.6
+		$opt = get_option( 'wp_parsaspace_opt' );
+		if ( version_compare( $get_version, '1.0.6', '>' ) and isset( $opt['is_automatic_upload'] ) and $opt['is_automatic_upload'] == "yes" ) {
+			$opt['is_automatic_upload'] = 'no';
+			update_option( 'wp_parsaspace_opt', $opt );
+		}
+
+	}
+
+
+	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0

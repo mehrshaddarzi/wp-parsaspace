@@ -35,7 +35,7 @@ class Wp_Parsaspace {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Wp_Parsaspace_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Wp_Parsaspace_Loader $loader Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -44,7 +44,7 @@ class Wp_Parsaspace {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 * @var      string $plugin_name The string used to uniquely identify this plugin.
 	 */
 	protected $plugin_name;
 
@@ -53,7 +53,7 @@ class Wp_Parsaspace {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
+	 * @var      string $version The current version of the plugin.
 	 */
 	protected $version;
 
@@ -112,38 +112,38 @@ class Wp_Parsaspace {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-i18n.php';
 
 
-        /**
-         * The class responsible for defining Fronted code in Admin
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-parsaspace-admin-ui.php';
+		/**
+		 * The class responsible for defining Fronted code in Admin
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-parsaspace-admin-ui.php';
 
-        /**
-         * The class responsible for defining Ajax Process Admin
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-admin-ajax.php';
+		/**
+		 * The class responsible for defining Ajax Process Admin
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-admin-ajax.php';
 
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-parsaspace-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-parsaspace-admin.php';
 
 
-        /**
-         * The class for defining Function Work ParsaSpace api.
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-api.php';
+		/**
+		 * The class for defining Function Work ParsaSpace api.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-api.php';
 
 
-        /**
-         * The class for defining Helper function Plugin
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-srdb.php';
+		/**
+		 * The class for defining Helper function Plugin
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-srdb.php';
 
-        /**
-         * The class for Search and Replace srdb
-         */
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-helper.php';
+		/**
+		 * The class for Search and Replace srdb
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-parsaspace-helper.php';
 
 		$this->loader = new Wp_Parsaspace_Loader();
 	}
@@ -165,15 +165,15 @@ class Wp_Parsaspace {
 	}
 
 
-    /**
-     * Define the Admin Ajax function in plugin
-     * @since    1.0.0
-     * @access   private
-     */
-    private function define_admin_ajax() {
-        $plugin_ajax = new Wp_Parsaspace_Admin_Ajax();
+	/**
+	 * Define the Admin Ajax function in plugin
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function define_admin_ajax() {
+		$plugin_ajax = new Wp_Parsaspace_Admin_Ajax();
 
-    }
+	}
 
 
 	/**
@@ -187,20 +187,25 @@ class Wp_Parsaspace {
 
 		$plugin_admin = new Wp_Parsaspace_Admin( $this->get_plugin_name(), $this->get_version() );
 
-        /*
-         * Admin init Action
-         */
-        $this->loader->add_action( 'admin_init', $plugin_admin, 'admin_init' );
+		/*
+		 * Check Version Update
+		 */
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'update_version' );
 
-        /*
-         * Admin Notice Wordpress
-         */
-        $this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notices' );
+		/*
+		 * Admin init Action
+		 */
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'admin_init' );
 
-        /*
-         * Admin Footer Action
-         */
-        $this->loader->add_action( 'admin_footer', $plugin_admin, 'admin_footer' );
+		/*
+		 * Admin Notice Wordpress
+		 */
+		$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notices' );
+
+		/*
+		 * Admin Footer Action
+		 */
+		$this->loader->add_action( 'admin_footer', $plugin_admin, 'admin_footer' );
 
 		/*
 		 * Add Style Admin Page
@@ -221,85 +226,84 @@ class Wp_Parsaspace {
 		/*
 		 * Add Script For Plugin Deactive Page
 		 */
-        $this->loader->add_action('admin_footer-plugins.php', $plugin_admin, 'admin_print_scripts_plugin_deactive');
+		$this->loader->add_action( 'admin_footer-plugins.php', $plugin_admin, 'admin_print_scripts_plugin_deactive' );
 
 
+		/*
+		 * Check is Active Connect Parsaspace
+		 */
+		$opt = get_option( 'wp_parsaspace_opt' );
+		if ( $opt['is_active'] == "yes" ) {
 
-        /*
-         * Check is Active Connect Parsaspace
-         */
-		$opt = get_option('wp_parsaspace_opt');
-        if ( $opt['is_active'] =="yes" ) {
+			/*
+			 * Action Change Url Attachment
+			 */
+			$this->loader->add_filter( 'wp_get_attachment_url', $plugin_admin, 'get_attachment_url' );
+			$this->loader->add_filter( 'wp_calculate_image_srcset', $plugin_admin, 'abc_custom_image_srcset', 10, 5 );
 
-            /*
-             * Action Change Url Attachment
-             */
-            $this->loader->add_filter('wp_get_attachment_url', $plugin_admin, 'get_attachment_url');
-            $this->loader->add_filter( 'wp_calculate_image_srcset', $plugin_admin,'abc_custom_image_srcset', 10, 5);
-
-            /*
-            * Action Add field To Upload Media Table
-            */
-            $this->loader->add_filter('manage_media_columns', $plugin_admin, 'manage_media_columns');
-            $this->loader->add_action('manage_media_custom_column', $plugin_admin, 'manage_media_custom_column', 10, 2);
-            $this->loader->add_action('admin_print_styles-upload.php', $plugin_admin, 'admin_print_styles_upload_table');
-
-
-            /*
-            * Action Add Bul Action to Upload.php
-            */
-            $this->loader->add_filter('bulk_actions-upload', $plugin_admin, 'bulk_actions_upload');
-            $this->loader->add_filter('handle_bulk_actions-upload', $plugin_admin, 'handle_bulk_actions_upload', 10,3);
+			/*
+			* Action Add field To Upload Media Table
+			*/
+			$this->loader->add_filter( 'manage_media_columns', $plugin_admin, 'manage_media_columns' );
+			$this->loader->add_action( 'manage_media_custom_column', $plugin_admin, 'manage_media_custom_column', 10, 2 );
+			$this->loader->add_action( 'admin_print_styles-upload.php', $plugin_admin, 'admin_print_styles_upload_table' );
 
 
-            /*
-             * Jpeg Quality if not Plugin Compress Image
-             */
-            if ( $opt['is_optimize'] =="no" ) {
-                remove_all_filters( 'jpeg_quality' );
-                $this->loader->add_filter('jpeg_quality', $plugin_admin, 'jpeg_quality');
-            }
-
-            /*
-             * Change Max Upload size in Wordpress
-             */
-            remove_all_filters( 'upload_size_limit' );
-            $this->loader->add_filter('upload_size_limit', $plugin_admin, 'upload_size_limit',20);
-
-            if ( $opt['is_automatic_upload'] =="yes" ) {
-
-                /*
-                 * Action Upload File Non Image Type in Wordpress
-                 */
-                $this->loader->add_action('add_attachment', $plugin_admin, 'add_file_non_image_to_parsaspace');
+			/*
+			* Action Add Bul Action to Upload.php
+			*/
+			$this->loader->add_filter( 'bulk_actions-upload', $plugin_admin, 'bulk_actions_upload' );
+			$this->loader->add_filter( 'handle_bulk_actions-upload', $plugin_admin, 'handle_bulk_actions_upload', 10, 3 );
 
 
-                /*
-                 * Action Upload Image File in Wordpress
-                 */
-                $this->loader->add_filter('wp_generate_attachment_metadata', $plugin_admin, 'add_file_image_to_parsaspace');
+			/*
+			 * Jpeg Quality if not Plugin Compress Image
+			 */
+			if ( $opt['is_optimize'] == "no" ) {
+				remove_all_filters( 'jpeg_quality' );
+				$this->loader->add_filter( 'jpeg_quality', $plugin_admin, 'jpeg_quality' );
+			}
 
-            }
+			/*
+			 * Change Max Upload size in Wordpress
+			 */
+			remove_all_filters( 'upload_size_limit' );
+			$this->loader->add_filter( 'upload_size_limit', $plugin_admin, 'upload_size_limit', 20 );
 
-            /*
-             * Action Remove File From ParsSpace
-             */
-            $this->loader->add_action('delete_attachment', $plugin_admin, 'wp_remove_file');
+			//if ( $opt['is_automatic_upload'] == "yes" ) {
+
+				/*
+				 * Action Upload File Non Image Type in Wordpress
+				 */
+				//$this->loader->add_action( 'add_attachment', $plugin_admin, 'add_file_non_image_to_parsaspace' );
 
 
-            /*
-             * Cron for Optimize Image in Wordpress
-             */
-            $this->loader->add_action('cron_upload_image', $plugin_admin, 'cron_upload_image', 10, 1);
-            $this->loader->add_action('cron_upload_file', $plugin_admin, 'cron_upload_file', 10, 1);
+				/*
+				 * Action Upload Image File in Wordpress
+				 */
+				//$this->loader->add_filter( 'wp_generate_attachment_metadata', $plugin_admin, 'add_file_image_to_parsaspace' );
+
+			//}
+
+			/*
+			 * Action Remove File From ParsSpace
+			 */
+			$this->loader->add_action( 'delete_attachment', $plugin_admin, 'wp_remove_file' );
 
 
-            /*
-             * Cron Delete File
-             */
-            $this->loader->add_action('cron_remove_attachment', $plugin_admin, 'cron_remove_attachment', 10, 1);
+			/*
+			 * Cron for Optimize Image in Wordpress
+			 */
+			$this->loader->add_action( 'cron_upload_image', $plugin_admin, 'cron_upload_image', 10, 1 );
+			$this->loader->add_action( 'cron_upload_file', $plugin_admin, 'cron_upload_file', 10, 1 );
 
-        }
+
+			/*
+			 * Cron Delete File
+			 */
+			$this->loader->add_action( 'cron_remove_attachment', $plugin_admin, 'cron_remove_attachment', 10, 1 );
+
+		}
 
 	}
 

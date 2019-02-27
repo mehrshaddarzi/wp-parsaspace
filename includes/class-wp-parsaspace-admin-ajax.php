@@ -100,18 +100,19 @@ class Wp_Parsaspace_Admin_Ajax {
 			}
 
 			//Option Update
-			$opt                        = get_option( 'wp_parsaspace_opt' );
-			$opt['api_token']           = trim( $_GET['token_api'] );
-			$opt['domain_name']         = $domain_name;
-			$opt['is_ssl']              = trim( $_GET['is_ssl'] );
-			$opt['base_folder']         = $base_folder;
-			$opt['remote_dir']          = 'direct';
-			$opt['install_step']        = 'no';
-			$opt['is_active']           = 'yes';
-			$opt['is_optimize']         = trim( $_GET['is_optimize'] );
-			$opt['quality_jpg']         = trim( $_GET['quality_jpg'] );
-			$opt['max_size_upload']     = trim( $_GET['max_size_upload'] );
-			$opt['is_automatic_upload'] = trim( $_GET['is_automatic_upload'] );
+			$opt                    = get_option( 'wp_parsaspace_opt' );
+			$opt['api_token']       = trim( $_GET['token_api'] );
+			$opt['domain_name']     = $domain_name;
+			$opt['is_ssl']          = trim( $_GET['is_ssl'] );
+			$opt['base_folder']     = $base_folder;
+			$opt['remote_dir']      = 'direct';
+			$opt['install_step']    = 'no';
+			$opt['is_active']       = 'yes';
+			$opt['is_optimize']     = trim( $_GET['is_optimize'] );
+			$opt['quality_jpg']     = trim( $_GET['quality_jpg'] );
+			$opt['max_size_upload'] = trim( $_GET['max_size_upload'] );
+			//$opt['is_automatic_upload'] = trim( $_GET['is_automatic_upload'] );
+			$opt['is_automatic_upload'] = 'no';
 			update_option( 'wp_parsaspace_opt', $opt );
 
 
@@ -189,10 +190,11 @@ class Wp_Parsaspace_Admin_Ajax {
 
 
 			//Option Update
-			$opt['is_optimize']         = trim( $_GET['is_optimize'] );
-			$opt['quality_jpg']         = trim( $_GET['quality_jpg'] );
-			$opt['max_size_upload']     = trim( $_GET['max_size_upload'] );
-			$opt['is_automatic_upload'] = trim( $_GET['is_automatic_upload'] );
+			$opt['is_optimize']     = trim( $_GET['is_optimize'] );
+			$opt['quality_jpg']     = trim( $_GET['quality_jpg'] );
+			$opt['max_size_upload'] = trim( $_GET['max_size_upload'] );
+			//$opt['is_automatic_upload'] = trim( $_GET['is_automatic_upload'] );
+			$opt['is_automatic_upload'] = 'no';
 			$opt['remote_dir']          = $remote_dir;
 			update_option( 'wp_parsaspace_opt', $opt );
 
