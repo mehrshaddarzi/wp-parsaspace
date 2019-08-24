@@ -345,23 +345,27 @@ class Wp_Parsaspace_Admin_Ajax {
 	 * @since    1.0.0
 	 */
 	public function change_setting_domain_parsaspace() {
-
-		global $wpdb;
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 
 			//Check Admin Reffer
 			check_ajax_referer( 'wp_parsaspace_token', 'security' );
 
-			//Heper function
+			//Helper function
 			$helper = new Wp_Parsaspace_Helper();
 
 			//Get Before Address Attachment
 			$admin      = new Wp_Parsaspace_Admin( 'wp-parsaspace', WP_PARSASPACE_VERSION );
 			$before_url = $admin->get_base_parsaspace_url();
 
-			//check Domain Name
+			//Check Domain Name
 			if ( trim( $_GET['domain_name'] ) == "" ) {
 				$result = array( 'error' => 'yes', 'text' => 'لطفا نام دامنه را وارد نمایید' );
+				$helper->json_exit( $result );
+			}
+
+			//Check Token
+			if ( trim( $_GET['token'] ) == "" ) {
+				$result = array( 'error' => 'yes', 'text' => 'لطفا توکن را وارد نمایید' );
 				$helper->json_exit( $result );
 			}
 
@@ -373,7 +377,7 @@ class Wp_Parsaspace_Admin_Ajax {
 
 			//Check Connection Api
 			$api = new Wp_Parsaspace_Api();
-			if ( $api->TestApi( false, $domain_name ) === false ) {
+			if ( $api->TestApi( trim( $_GET['token'] ), $domain_name ) === false ) {
 				$result = array( 'error' => 'yes', 'text' => 'ارتباط شما با پارسا اسپیس برقرار نشد لطفا مقادیر ورودی را بررسی کنید' );
 				$helper->json_exit( $result );
 			}
@@ -393,6 +397,7 @@ class Wp_Parsaspace_Admin_Ajax {
 			}
 
 			//Option Update
+			$opt['api_token']   = trim( $_GET['token'] );
 			$opt['domain_name'] = $domain_name;
 			$opt['is_ssl']      = trim( $_GET['is_ssl'] );
 			$opt['base_folder'] = $base_folder;

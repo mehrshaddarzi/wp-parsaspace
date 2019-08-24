@@ -88,8 +88,8 @@ class Wp_Parsaspace_Admin_Ui {
         $number_all = $helper->get_count_attachment();
         $in_parsaspace = $helper->get_count_attachment('parsaspace');
         $in_host = $number_all - $in_parsaspace;
-        $parspace_percentege = round(($in_parsaspace / $number_all) * 100 );
-        $inhost_percentege = round(100 - $parspace_percentege );
+        $parspace_percentege = @round(($in_parsaspace / $number_all) * 100 );
+        $inhost_percentege = @round(100 - $parspace_percentege );
 
         ?>
         <canvas id="myChart_doughnut" height="100vh" width="90vw"></canvas>
@@ -189,8 +189,8 @@ echo '
 
                 <tr>
                     <th><label for="token_api">API Token</label></th>
-                    <td><input type="text" name="token_api" id="token_api" value="'.$opt['api_token'].'" autocomplete="off" class="regular-text text-left ltr" readonly>
-                    <span><i class="fa fa-pencil i-pen" id="change_token"></i></span>
+                    <td><input type="text" name="token_api" id="token_api" value="'.$opt['api_token'].'" autocomplete="off" class="regular-text text-left ltr" '.( isset($_GET['change_inf']) ===true ? '' : 'readonly').'>
+                    <!--<span><i class="fa fa-pencil i-pen" id="change_token"></i></span>-->
                     </td>
                 </tr>
 
