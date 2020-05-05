@@ -563,9 +563,9 @@ class Wp_Parsaspace_Admin_Ajax {
 			$api->RemoteUpload( $helper->remove_duplicate_slash( $path ), $file_url );
 
 			if ( $file_name == "" ) {
-				sleep( 8 );
+				sleep( 2 );
 			} else {
-				sleep( 9 );
+				sleep( 2 );
 				//Change File Name
 				$api->Rename( $helper->remove_duplicate_slash( rtrim( $path, "/" ) . "/" . basename( $file_url ) ), $helper->remove_duplicate_slash( rtrim( $path, "/" ) . "/" . $file_name ) );
 				sleep( 2 );

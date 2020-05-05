@@ -422,7 +422,8 @@ class Wp_Parsaspace_Admin {
 					//Remove File After Upload
 					if ( $opt['is_optimize'] == "no" ) {
 						$file_path = str_replace( "\\", "/", $upload_dir['path'] ) . $helper->remove_duplicate_slash( '/' . basename( $file_name ) );
-						wp_schedule_single_event( time() + 120, 'cron_remove_attachment', array( $file_path ) );
+                        $file_id = 0;
+						wp_schedule_single_event( time() + 120, 'cron_remove_attachment', array( $file_path, $file_id ) );
 					}
 
 				}
@@ -534,7 +535,8 @@ class Wp_Parsaspace_Admin {
 
 				//Remove File After Upload
 				$file_path = $file;
-				wp_schedule_single_event( time() + 60, 'cron_remove_attachment', array( $file_path ) );
+				$file_id = $post_id;
+				wp_schedule_single_event( time() + 60, 'cron_remove_attachment', array( $file_path, $file_id ) );
 
 			}
 
@@ -548,8 +550,15 @@ class Wp_Parsaspace_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function cron_remove_attachment( $file_path ) {
-		wp_delete_file( $file_path );
+	public function cron_remove_attachment( $file_path, $file_id ) {
+	    $removed_list = get_option('parsaspace_removed_list_file');
+	    if(empty($removed_list) || $removed_list ===false) {
+	        $removed_list = array();
+        }
+	    $removed_list[$file_id] = $file_path;
+	    update_option('parsaspace_removed_list_file', $removed_list, 'no');
+	    //TODO Create Admin Page for Remove All file From User
+		//wp_delete_file( $file_path );
 	}
 
 
@@ -628,7 +637,7 @@ class Wp_Parsaspace_Admin {
 
 					//Remove File
 					$file_path = str_ireplace( basename( $file_name ), "", $file ) . basename( $file_name );
-					wp_schedule_single_event( time() + 90, 'cron_remove_attachment', array( $file_path ) );
+					wp_schedule_single_event( time() + 90, 'cron_remove_attachment', array( $file_path, $file_id ) );
 
 				}
 
