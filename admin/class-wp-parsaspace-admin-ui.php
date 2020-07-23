@@ -7,7 +7,7 @@ class Wp_Parsaspace_Admin_Ui {
      *
      * @since    1.0.0
      */
-    public function meta_box_static_media()
+    public static function meta_box_static_media()
     {
 
       $helper = new Wp_Parsaspace_Helper();
@@ -82,7 +82,7 @@ class Wp_Parsaspace_Admin_Ui {
      *
      * @since    1.0.0
      */
-    public function meta_box_static_media_cluod()
+    public static function meta_box_static_media_cluod()
     {
         $helper = new Wp_Parsaspace_Helper();
         $number_all = $helper->get_count_attachment();
@@ -142,7 +142,7 @@ class Wp_Parsaspace_Admin_Ui {
      *
      * @since    1.0.0
      */
-    public function meta_box_developer()
+    public static function meta_box_developer()
     {
 $helper = new Wp_Parsaspace_Helper();
 echo '
@@ -163,7 +163,7 @@ echo '
      *
      * @since    1.0.0
      */
-    public function meta_box_review()
+    public static function meta_box_review()
     {
         $helper = new Wp_Parsaspace_Helper();
 
@@ -291,7 +291,7 @@ echo '</div>';
      *
      * @since    1.0.0
      */
-    public function meta_box_system()
+    public static function meta_box_system()
     {
         $helper = new Wp_Parsaspace_Helper();
 
@@ -369,7 +369,7 @@ echo '<div class="text-center" style="margin: 35px auto 20px auto;">
      *
      * @since    1.0.0
      */
-    public function meta_box_remote_upload()
+    public static function meta_box_remote_upload()
     {
 
 echo '
@@ -424,12 +424,12 @@ echo '<div id="file_manager_parsaspace" class="install_step_parsaspace">
      *
      * @since    1.0.0
      */
-    public function setting_page()
+    public static function setting_page()
     {
         global $screen_layout_columns, $hook_suffix;
 
         /* enable add_meta_boxes function in this page. */
-        do_action( 'add_meta_boxes', $hook_suffix );
+        do_action( 'add_meta_boxes_parsaspace', $hook_suffix );
         $pagehook = 'toplevel_page_parsaspace_setting';
         ?>
         <div id="admin_page_wp_parsaspace" class="wrap admin_wrap">
