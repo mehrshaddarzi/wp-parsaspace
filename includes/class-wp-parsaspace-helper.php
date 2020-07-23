@@ -384,32 +384,40 @@ class Wp_Parsaspace_Helper {
 	}
 
 
-	/**
-	 * Search And Replace in Database
-	 *
-	 * @since    1.0.0
-	 */
+    /**
+     * Search And Replace in Database
+     *
+     * @param $search_for
+     * @param $replace_with
+     * @return bool
+     * @since    1.0.0
+     */
 	public function search_and_replace( $search_for, $replace_with ) {
 		global $wpdb;
 
-		$table_list = [
-			$wpdb->posts,
-			$wpdb->postmeta,
-			$wpdb->usermeta,
-			$wpdb->options,
-		];
-		$srdb       = new Wp_Parsaspace_SRDB();
-		foreach ( $table_list as $tbl ) {
-			$args = array(
-				'case_insensitive' => 'off',
-				'replace_guids'    => 'off',
-				'dry_run'          => 'off',
-				'search_for'       => $search_for,
-				'replace_with'     => $replace_with,
-				'completed_pages'  => 0,
-			);
-			$srdb->srdb( $tbl, $args );
-		}
+		$table_list = array(
+			$wpdb->posts => 'post_content',
+			$wpdb->postmeta => 'meta_value',
+			//$wpdb->usermeta,
+			//$wpdb->options,
+        );
+		foreach ($table_list as $table_name => $col) {
+		    $sql = "UPDATE `{$table_name}` SET `{$col}` = REPLACE({$col}, '{$search_for}', '{$replace_with}')";
+		    $wpdb->query($sql);
+        }
+
+		//$srdb       = new Wp_Parsaspace_SRDB();
+        //		foreach ( $table_list as $tbl ) {
+        //			$args = array(
+        //				'case_insensitive' => 'off',
+        //				'replace_guids'    => 'off',
+        //				'dry_run'          => 'off',
+        //				'search_for'       => $search_for,
+        //				'replace_with'     => $replace_with,
+        //				'completed_pages'  => 0,
+        //			);
+        //			$srdb->srdb( $tbl, $args );
+        //		}
 
 		return true;
 	}
